@@ -14,18 +14,19 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-        factory(Order::class, 150)
+        factory(Order::class, 10)
            ->make()
            ->each(function($ord){
                $user = User::inRandomOrder() -> first();
                $ord -> user() -> associate($user);
                $ord -> save();
-               $dish = Dish::inRandomOrder() -> limit(rand(5,15))->get();
+               $dish = Dish::inRandomOrder() -> limit(rand(1,5))->get();
                $ord -> dishes()-> attach($dish);
-               $ran = rand(1,10);
-               $i = $ord -> id;
-                DB::update('update dish_order set dish_quantity ='. $ran . ' where id =' . $i);
+               $ran = rand(1,3);
+               $y = $ord -> id;
+                 DB::update('update dish_order set dish_quantity ='. $ran . ' where order_id =' . $y);
             }); 
+
             
             
     }  

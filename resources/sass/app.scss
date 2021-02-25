@@ -1,8 +1,31 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
-@import 'variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+        // Fonts
+        @import url('https://fonts.googleapis.com/css?family=Nunito');
+        // Variables
+        @import 'variables';
+        // Bootstrap
+        @import '~bootstrap/scss/bootstrap';
+        body {
+            background-color: purple;
+        }
+        
+        @mixin flex($dir,
+        $align,
+        $just) {
+            display: flex;
+            flex-direction: $dir;
+            align-items: $align;
+            justify-content: $just;
+        }
+        
+        main {
+            @include flex(row,
+            center,
+            space-between);
+        }
+        
+        .box {
+            width: 250px;
+            height: 250px;
+            background-color: gold;
+            margin: 5%;
+        }
