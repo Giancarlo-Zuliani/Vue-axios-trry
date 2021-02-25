@@ -10944,10 +10944,6 @@ a.text-dark:focus {
   }
 }
 
-body {
-  background-color: purple;
-}
-
 main {
   display: flex;
   flex-direction: row;
@@ -10960,5 +10956,19 @@ main {
   height: 250px;
   background-color: gold;
   margin: 5%;
+  transition: all ease 0.5s;
+}
+
+body {
+  background-color: purple;
+}
+
+.showrestaurant {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 90vh;
 }
 

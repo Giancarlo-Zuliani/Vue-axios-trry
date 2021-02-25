@@ -1,31 +1,10 @@
         // Fonts
         @import url('https://fonts.googleapis.com/css?family=Nunito');
         // Variables
-        @import 'variables';
+        @import 'partials/_variables.scss';
         // Bootstrap
         @import '~bootstrap/scss/bootstrap';
-        body {
-            background-color: purple;
-        }
-        
-        @mixin flex($dir,
-        $align,
-        $just) {
-            display: flex;
-            flex-direction: $dir;
-            align-items: $align;
-            justify-content: $just;
-        }
-        
-        main {
-            @include flex(row,
-            center,
-            space-between);
-        }
-        
-        .box {
-            width: 250px;
-            height: 250px;
-            background-color: gold;
-            margin: 5%;
-        }
+        @import 'partials/_common.scss';
+        @import 'partials/_mixins.scss';
+        @import 'partials/_main.scss';
+        @import 'partials/_animation.scss';

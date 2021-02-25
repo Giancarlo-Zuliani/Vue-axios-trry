@@ -13,7 +13,7 @@ class ApiController extends Controller
     }
     public function restaurant($id){
         $rest = User::findOrFail($id);
-        $dishes = Dish::firstOrFail() -> where('user_id' , $id)-> get();
-        return response() -> json([$rest,$dishes]);
+        $dishes = Dish::where('user_id' , $id) -> get();
+        return response() -> json($dishes);
     }
 }

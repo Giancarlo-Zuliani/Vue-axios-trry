@@ -1,0 +1,22 @@
+@mixin flex($dir, $align, $just) {
+    display: flex;
+    flex-direction: $dir;
+    align-items: $align;
+    justify-content: $just;
+}
+
+main {
+    @include flex(row, center, space-between);
+}
+
+.box {
+    width: 250px;
+    height: 250px;
+    background-color: gold;
+    margin: 5%;
+    transition: all ease .5s;
+}
+
+body {
+    background-color: purple;
+}
