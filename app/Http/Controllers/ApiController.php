@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Dish;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -12,6 +13,7 @@ class ApiController extends Controller
     }
     public function restaurant($id){
         $rest = User::findOrFail($id);
-        return response() -> json([$rest]);
+        $dishes = Dish::firstOrFail() -> where('user_id' , $id)-> get();
+        return response() -> json([$rest,$dishes]);
     }
 }
