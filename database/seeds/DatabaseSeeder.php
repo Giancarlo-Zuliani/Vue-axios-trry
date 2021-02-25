@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             TypologySeeder::class,
             DishSeeder::class,
             OrderSeeder::class,
+            PaymentSeeder::class,
         ]);
     }
 }

@@ -23,4 +23,7 @@ class Order extends Model
     public function dishes(){
         return $this -> belongsToMany(Dish::class);
     }
+    public function payments(){
+        return $this -> belongsToMany(Payment::class);
+    }
 }

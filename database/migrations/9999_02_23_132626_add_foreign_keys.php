@@ -42,6 +42,11 @@ class AddForeignKeys extends Migration
         ->references('id')
         ->on('users');
     });
+    Schema::table('payments' , function(Blueprint $table){
+        $table->foreign('order_id' , 'ord-pay')
+        ->references('id')
+        ->on('orders');
+    });
 }
 
     /**
@@ -51,6 +56,10 @@ class AddForeignKeys extends Migration
      */
     public function down()
     {
+        Schema::table('payments' , function (Blueprint $table){
+            $table -> dropForeign('ord-pay');
+        });
+
         Schema::table('dishes' , function (Blueprint $table){
             $table -> dropForeign('user-dish');
         });
